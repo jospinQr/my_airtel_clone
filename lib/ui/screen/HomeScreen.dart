@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_airtel_clone/ui/components/AirtelMoneyCard.dart';
 import 'package:my_airtel_clone/ui/components/IdentityCard.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,7 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
                    Container(height: 32,color: Color.fromARGB(0XFF, 0X00, 0X00, 0X80),),
                    Padding(
                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                     child: IdentityCard(),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         IdentityCard(),
+                         SizedBox(height: 4,),
+                         AirtelMoneyCard()
+                       ],
+                     ),
                    )
                  ],
               ),

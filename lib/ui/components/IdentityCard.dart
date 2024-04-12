@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:my_airtel_clone/ui/components/IndicatorBox.dart';
 
 class IdentityCard extends StatelessWidget {
   const IdentityCard({super.key});
@@ -12,7 +11,7 @@ class IdentityCard extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.only(top: 4, left: 8, right: 8, bottom: 0),
         child: Column(
           children: [
             Row(
@@ -31,11 +30,9 @@ class IdentityCard extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Expanded(
-                    child: Text(
-                      "Gerer mon compte".toUpperCase(),
-                      style: TextStyle(color: Colors.blue, fontSize: 10),
-                    ),
+                  child: Text(
+                    "Gerer mon compte".toUpperCase(),
+                    style: TextStyle(color: Colors.blue, fontSize: 10),
                   ),
                 ),
               ],
@@ -143,29 +140,57 @@ class IdentityCard extends StatelessWidget {
             ),
             Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               Expanded(child: ElevatedButton(
-                  onPressed: () {},
-                  child: Row(
+                Expanded(
+                    child: Column(
+                  children: [
+                    ElevatedButton(
+
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Acheter des forfaits",
+                            style: TextStyle(fontSize: 10),
+                          ),
+                          Icon(
+                            Icons.account_balance_wallet_sharp,
+                            size: 14,
+                          )
+                        ],
+                      ),
+                    ),
+                    IndicatorBox()
+                  ],
+                )),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Acheter des forfaits",style: TextStyle(fontSize: 10),),
-                      Icon(Icons.account_balance_wallet_sharp)
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.flash_on_outlined,
+                              size: 14,
+                            ),
+                            Text(
+                              "Acheter des forfaits",
+                              style: TextStyle(fontSize: 10),
+                            )
+                          ],
+                        ),
+                      ),
+                      IndicatorBox()
                     ],
                   ),
-                )),
-                Expanded(
-                  child: ElevatedButton(
-
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-
-                        Icon(Icons.flash_on_outlined,size: 14,),
-                        Text("Acheter des forfaits",style: TextStyle(fontSize: 10),)
-                      ],
-                    ),
-                  ),
-                )
+                ),
               ],
             )
           ],
